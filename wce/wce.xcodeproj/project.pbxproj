@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		B4E24037290FC745001FFD13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E24036290FC745001FFD13 /* AppDelegate.swift */; };
 		B4E24039290FC745001FFD13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E24038290FC745001FFD13 /* SceneDelegate.swift */; };
-		B4E2403B290FC745001FFD13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E2403A290FC745001FFD13 /* ViewController.swift */; };
+		B4E2403B290FC745001FFD13 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E2403A290FC745001FFD13 /* SearchViewController.swift */; };
 		B4E24040290FC748001FFD13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4E2403F290FC748001FFD13 /* Assets.xcassets */; };
 		B4E24043290FC748001FFD13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4E24041290FC748001FFD13 /* LaunchScreen.storyboard */; };
 		B4E24059290FD672001FFD13 /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E24058290FD672001FFD13 /* DataRequest.swift */; };
@@ -17,13 +17,14 @@
 		B4E2405D290FD7BE001FFD13 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E2405C290FD7BE001FFD13 /* ErrorHandler.swift */; };
 		B4E2405F290FD7E9001FFD13 /* SearchCompanyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E2405E290FD7E9001FFD13 /* SearchCompanyRequest.swift */; };
 		B4E24062290FD87E001FFD13 /* SearchCompanyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E24061290FD87E001FFD13 /* SearchCompanyResponse.swift */; };
+		B4E24069291018D2001FFD13 /* SearchCompanyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E24068291018D2001FFD13 /* SearchCompanyViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B4E24033290FC745001FFD13 /* wce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4E24036290FC745001FFD13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4E24038290FC745001FFD13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B4E2403A290FC745001FFD13 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B4E2403A290FC745001FFD13 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		B4E2403F290FC748001FFD13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4E24042290FC748001FFD13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B4E24044290FC748001FFD13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -32,6 +33,7 @@
 		B4E2405C290FD7BE001FFD13 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		B4E2405E290FD7E9001FFD13 /* SearchCompanyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCompanyRequest.swift; sourceTree = "<group>"; };
 		B4E24061290FD87E001FFD13 /* SearchCompanyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCompanyResponse.swift; sourceTree = "<group>"; };
+		B4E24068291018D2001FFD13 /* SearchCompanyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCompanyViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,9 +67,11 @@
 			isa = PBXGroup;
 			children = (
 				B4E24056290FD64F001FFD13 /* Network */,
-				B4E24036290FC745001FFD13 /* AppDelegate.swift */,
-				B4E24038290FC745001FFD13 /* SceneDelegate.swift */,
-				B4E2403A290FC745001FFD13 /* ViewController.swift */,
+				B4E24060290FD867001FFD13 /* Model */,
+				B4E240652910185E001FFD13 /* View */,
+				B4E240642910184D001FFD13 /* ViewModel */,
+				B4E2406629101865001FFD13 /* ViewController */,
+				B4E240672910189F001FFD13 /* App */,
 				B4E2403F290FC748001FFD13 /* Assets.xcassets */,
 				B4E24041290FC748001FFD13 /* LaunchScreen.storyboard */,
 				B4E24044290FC748001FFD13 /* Info.plist */,
@@ -82,7 +86,6 @@
 				B4E24058290FD672001FFD13 /* DataRequest.swift */,
 				B4E2405C290FD7BE001FFD13 /* ErrorHandler.swift */,
 				B4E24057290FD65D001FFD13 /* Request */,
-				B4E24060290FD867001FFD13 /* Model */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -101,6 +104,38 @@
 				B4E24061290FD87E001FFD13 /* SearchCompanyResponse.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B4E240642910184D001FFD13 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B4E24068291018D2001FFD13 /* SearchCompanyViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B4E240652910185E001FFD13 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B4E2406629101865001FFD13 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B4E2403A290FC745001FFD13 /* SearchViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		B4E240672910189F001FFD13 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				B4E24036290FC745001FFD13 /* AppDelegate.swift */,
+				B4E24038290FC745001FFD13 /* SceneDelegate.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,12 +209,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4E2405B290FD6D8001FFD13 /* NetworkService.swift in Sources */,
-				B4E2403B290FC745001FFD13 /* ViewController.swift in Sources */,
+				B4E2403B290FC745001FFD13 /* SearchViewController.swift in Sources */,
 				B4E24062290FD87E001FFD13 /* SearchCompanyResponse.swift in Sources */,
 				B4E24037290FC745001FFD13 /* AppDelegate.swift in Sources */,
 				B4E2405D290FD7BE001FFD13 /* ErrorHandler.swift in Sources */,
 				B4E24039290FC745001FFD13 /* SceneDelegate.swift in Sources */,
 				B4E24059290FD672001FFD13 /* DataRequest.swift in Sources */,
+				B4E24069291018D2001FFD13 /* SearchCompanyViewModel.swift in Sources */,
 				B4E2405F290FD7E9001FFD13 /* SearchCompanyRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B49D245C2912A4B300BBA831 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49D245B2912A4B300BBA831 /* SearchCollectionViewCell.swift */; };
 		B4E24037290FC745001FFD13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E24036290FC745001FFD13 /* AppDelegate.swift */; };
 		B4E24039290FC745001FFD13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E24038290FC745001FFD13 /* SceneDelegate.swift */; };
 		B4E2403B290FC745001FFD13 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E2403A290FC745001FFD13 /* SearchViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B49D245B2912A4B300BBA831 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		B4E24033290FC745001FFD13 /* wce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4E24036290FC745001FFD13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4E24038290FC745001FFD13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 		B4E240652910185E001FFD13 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B49D245B2912A4B300BBA831 /* SearchCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				B4E2403B290FC745001FFD13 /* SearchViewController.swift in Sources */,
 				B4E24062290FD87E001FFD13 /* SearchCompanyResponse.swift in Sources */,
 				B4E24037290FC745001FFD13 /* AppDelegate.swift in Sources */,
+				B49D245C2912A4B300BBA831 /* SearchCollectionViewCell.swift in Sources */,
 				B4E2405D290FD7BE001FFD13 /* ErrorHandler.swift in Sources */,
 				B4E24039290FC745001FFD13 /* SceneDelegate.swift in Sources */,
 				B4E24059290FD672001FFD13 /* DataRequest.swift in Sources */,

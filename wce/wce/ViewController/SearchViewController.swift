@@ -14,21 +14,28 @@ class SearchViewController: UIViewController {
     private var viewModel: SearchCompanyViewModel
     private var searchController = UISearchController(searchResultsController: nil)
     
+    private lazy var mainBackView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.white
+        view.clipsToBounds = true
+        return view
+    }()
+    
     private lazy var searchResultsCollectionView: UICollectionView = {
         
         let collectionViewLayout = UICollectionViewCompositionalLayout(sectionProvider: { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
-          let isPhone = layoutEnvironment.traitCollection.userInterfaceIdiom == UIUserInterfaceIdiom.phone
-          let size = NSCollectionLayoutSize(
-            widthDimension: NSCollectionLayoutDimension.fractionalWidth(1),
-            heightDimension: NSCollectionLayoutDimension.absolute(isPhone ? 60 : 80)
-          )
-          let itemCount = isPhone ? 1 : 3
-          let item = NSCollectionLayoutItem(layoutSize: size)
-          let group = NSCollectionLayoutGroup.horizontal(layoutSize: size, subitem: item, count: itemCount)
-          let section = NSCollectionLayoutSection(group: group)
-          section.contentInsets = NSDirectionalEdgeInsets(top: 4, leading: 4, bottom: 4, trailing: 4)
-          section.interGroupSpacing = 4
-          return section
+            let isPhone = layoutEnvironment.traitCollection.userInterfaceIdiom == UIUserInterfaceIdiom.phone
+            let size = NSCollectionLayoutSize(
+                widthDimension: NSCollectionLayoutDimension.fractionalWidth(1),
+                heightDimension: NSCollectionLayoutDimension.absolute(isPhone ? 60 : 80)
+            )
+            let itemCount = isPhone ? 1 : 3
+            let item = NSCollectionLayoutItem(layoutSize: size)
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: size, subitem: item, count: itemCount)
+            let section = NSCollectionLayoutSection(group: group)
+            section.contentInsets = NSDirectionalEdgeInsets(top: 4, leading: 4, bottom: 4, trailing: 4)
+            section.interGroupSpacing = 4
+            return section
         })
         
         
@@ -41,7 +48,6 @@ class SearchViewController: UIViewController {
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.backgroundColor = UIColor.clear
         
-        
         return collectionView
     }()
     
@@ -53,6 +59,15 @@ class SearchViewController: UIViewController {
         return view
     }()
     
+    private lazy var initialAnimationView: LottieAnimationView = {
+        let view = LottieAnimationView()
+        view.animation = LottieAnimation.named("logo-full-animation")
+        view.loopMode = .playOnce
+        view.clipsToBounds = false
+        return view
+    }()
+    
+    
     init(viewModel: SearchCompanyViewModel){
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -61,17 +76,44 @@ class SearchViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError()
     }
-     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureSearchController()
-        configureUI()
-        searchCompanies()
-        bindViewModel()
-        view.backgroundColor = UIColor.white
-        searchBarAnimationView.play()
+        
+        setInitialView { [weak self] in
+            self?.configureSearchController()
+            self?.configureUI()
+            self?.searchCompanies()
+            self?.bindViewModel()
+            self?.view.backgroundColor = UIColor.white
+            return self?.searchBarAnimationView.play()
+        }
+        
+        
     }
-
+    
+    
+    private func setInitialView(_ completion: @escaping () -> Void?) {
+        view.addSubview(mainBackView)
+        mainBackView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        
+        mainBackView.addSubview(initialAnimationView)
+        initialAnimationView.snp.makeConstraints { (make) in
+            make.centerY.equalToSuperview()
+            make.leading.trailing.equalToSuperview().inset(20)
+        }
+        
+        initialAnimationView.play { completed in
+            if completed {
+                self.mainBackView.removeFromSuperview()
+                completion()
+            }
+        }
+        
+    }
+    
     private func configureUI() {
         searchResultsCollectionView.backgroundColor = UIColor.white
         view.addSubview(searchResultsCollectionView)
@@ -83,10 +125,10 @@ class SearchViewController: UIViewController {
         
         view.addSubview(searchBarAnimationView)
         searchBarAnimationView.snp.makeConstraints { (make) in
-           // make.top.equalToSuperview().inset(20)
-           make.center.equalToSuperview()
-//            make.leading.trailing.equalToSuperview().inset(25)
-//            make.height.equalTo(100)
+            // make.top.equalToSuperview().inset(20)
+            make.center.equalToSuperview()
+            //            make.leading.trailing.equalToSuperview().inset(25)
+            //            make.height.equalTo(100)
         }
     }
     

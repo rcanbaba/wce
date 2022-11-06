@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		B413A25B2917E182001E853D /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = B413A25A2917E182001E853D /* Lottie */; };
 		B413A2612917E4FD001E853D /* search-box-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = B413A2602917E4FD001E853D /* search-box-animation.json */; };
-		B413A2632917E58F001E853D /* level_up.json in Resources */ = {isa = PBXBuildFile; fileRef = B413A2622917E58F001E853D /* level_up.json */; };
 		B413A2652917E612001E853D /* asearching-radius.json in Resources */ = {isa = PBXBuildFile; fileRef = B413A2642917E612001E853D /* asearching-radius.json */; };
+		B413A269291867F3001E853D /* logo-full-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = B413A268291867F3001E853D /* logo-full-animation.json */; };
+		B413A26B2918687F001E853D /* logo-rotate-orange-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = B413A26A2918687F001E853D /* logo-rotate-orange-animation.json */; };
 		B49D245C2912A4B300BBA831 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49D245B2912A4B300BBA831 /* SearchCollectionViewCell.swift */; };
 		B4E24037290FC745001FFD13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E24036290FC745001FFD13 /* AppDelegate.swift */; };
 		B4E24039290FC745001FFD13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E24038290FC745001FFD13 /* SceneDelegate.swift */; };
@@ -28,8 +29,9 @@
 
 /* Begin PBXFileReference section */
 		B413A2602917E4FD001E853D /* search-box-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "search-box-animation.json"; sourceTree = "<group>"; };
-		B413A2622917E58F001E853D /* level_up.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level_up.json; sourceTree = "<group>"; };
 		B413A2642917E612001E853D /* asearching-radius.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "asearching-radius.json"; sourceTree = "<group>"; };
+		B413A268291867F3001E853D /* logo-full-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "logo-full-animation.json"; path = "../../../../../../Desktop/logo-full-animation.json"; sourceTree = "<group>"; };
+		B413A26A2918687F001E853D /* logo-rotate-orange-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "logo-rotate-orange-animation.json"; sourceTree = "<group>"; };
 		B49D245B2912A4B300BBA831 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		B4E24033290FC745001FFD13 /* wce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4E24036290FC745001FFD13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,8 +80,9 @@
 			isa = PBXGroup;
 			children = (
 				B413A2602917E4FD001E853D /* search-box-animation.json */,
-				B413A2622917E58F001E853D /* level_up.json */,
 				B413A2642917E612001E853D /* asearching-radius.json */,
+				B413A268291867F3001E853D /* logo-full-animation.json */,
+				B413A26A2918687F001E853D /* logo-rotate-orange-animation.json */,
 			);
 			path = "lottie-animations";
 			sourceTree = "<group>";
@@ -245,8 +248,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B413A2612917E4FD001E853D /* search-box-animation.json in Resources */,
+				B413A269291867F3001E853D /* logo-full-animation.json in Resources */,
+				B413A26B2918687F001E853D /* logo-rotate-orange-animation.json in Resources */,
 				B413A2652917E612001E853D /* asearching-radius.json in Resources */,
-				B413A2632917E58F001E853D /* level_up.json in Resources */,
 				B4E24043290FC748001FFD13 /* LaunchScreen.storyboard in Resources */,
 				B4E24040290FC748001FFD13 /* Assets.xcassets in Resources */,
 			);

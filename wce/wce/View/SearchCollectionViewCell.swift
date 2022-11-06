@@ -28,7 +28,17 @@ class SearchCollectionViewCell: UICollectionViewCell {
         super.init(coder: aDecoder)
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        contentView.layer.cornerRadius = 10
+    }
+    
+    override func prepareForReuse() {
+        
+    }
+    
     private func configureUI () {
+        layer.backgroundColor = UIColor.gray.cgColor
         self.contentView.addSubview(infoLabel)
         infoLabel.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()

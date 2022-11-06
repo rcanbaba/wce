@@ -33,7 +33,6 @@ class SearchViewController: UIViewController {
         
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: collectionViewLayout)
         collectionView.register(SearchCollectionViewCell.self, forCellWithReuseIdentifier: "SearchCollectionViewCellID")
-       // collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.isScrollEnabled = false
@@ -76,7 +75,7 @@ class SearchViewController: UIViewController {
     private func configureSearchController() {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Videos"
+        searchController.searchBar.placeholder = "Company Name"
         navigationItem.searchController = searchController
         definesPresentationContext = true
     }
@@ -89,11 +88,13 @@ class SearchViewController: UIViewController {
         viewModel.onSearchCompanySucceed = { [weak self] in
             DispatchQueue.main.async {
                 print(self?.viewModel.companies)
+                self?.searchResultsCollectionView.reloadData()
             }
         }
         
         viewModel.onSearchCompanyFailure = { error in
             print(error)
+            self.searchResultsCollectionView.reloadData()
         }
         
     }
@@ -105,9 +106,6 @@ class SearchViewController: UIViewController {
 extension SearchViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         searchCompanies(text: searchController.searchBar.text)
-    // TODO: search text e göre update et vs vs
-       // videoList = filteredVideos(for: searchController.searchBar.text)
-        searchResultsCollectionView.reloadData()
     }
     
     

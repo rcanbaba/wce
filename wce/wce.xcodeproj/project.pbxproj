@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B413A25B2917E182001E853D /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = B413A25A2917E182001E853D /* Lottie */; };
+		B413A25F2917E1B4001E853D /* search-box-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = B413A25E2917E1B4001E853D /* search-box-animation.json */; };
 		B49D245C2912A4B300BBA831 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49D245B2912A4B300BBA831 /* SearchCollectionViewCell.swift */; };
 		B4E24037290FC745001FFD13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E24036290FC745001FFD13 /* AppDelegate.swift */; };
 		B4E24039290FC745001FFD13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E24038290FC745001FFD13 /* SceneDelegate.swift */; };
@@ -23,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B413A25E2917E1B4001E853D /* search-box-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "search-box-animation.json"; sourceTree = "<group>"; };
 		B49D245B2912A4B300BBA831 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		B4E24033290FC745001FFD13 /* wce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4E24036290FC745001FFD13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,12 +48,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4E2406C29101FEF001FFD13 /* SnapKit in Frameworks */,
+				B413A25B2917E182001E853D /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B413A2582917C79F001E853D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		B413A25C2917E190001E853D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B413A25D2917E198001E853D /* lottie-animations */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B413A25D2917E198001E853D /* lottie-animations */ = {
+			isa = PBXGroup;
+			children = (
+				B413A25E2917E1B4001E853D /* search-box-animation.json */,
+			);
+			path = "lottie-animations";
+			sourceTree = "<group>";
+		};
 		B4E2402A290FC745001FFD13 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +97,8 @@
 		B4E24035290FC745001FFD13 /* wce */ = {
 			isa = PBXGroup;
 			children = (
+				B413A25C2917E190001E853D /* Resources */,
+				B413A2582917C79F001E853D /* Extension */,
 				B4E24056290FD64F001FFD13 /* Network */,
 				B4E24060290FD867001FFD13 /* Model */,
 				B4E240652910185E001FFD13 /* View */,
@@ -161,6 +190,7 @@
 			name = wce;
 			packageProductDependencies = (
 				B4E2406B29101FEF001FFD13 /* SnapKit */,
+				B413A25A2917E182001E853D /* Lottie */,
 			);
 			productName = wce;
 			productReference = B4E24033290FC745001FFD13 /* wce.app */;
@@ -192,6 +222,7 @@
 			mainGroup = B4E2402A290FC745001FFD13;
 			packageReferences = (
 				B4E2406A29101FEF001FFD13 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				B413A2592917E182001E853D /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = B4E24034290FC745001FFD13 /* Products */;
 			projectDirPath = "";
@@ -207,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B413A25F2917E1B4001E853D /* search-box-animation.json in Resources */,
 				B4E24043290FC748001FFD13 /* LaunchScreen.storyboard in Resources */,
 				B4E24040290FC748001FFD13 /* Assets.xcassets in Resources */,
 			);
@@ -438,6 +470,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B413A2592917E182001E853D /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		B4E2406A29101FEF001FFD13 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -449,6 +489,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B413A25A2917E182001E853D /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B413A2592917E182001E853D /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
 		B4E2406B29101FEF001FFD13 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B4E2406A29101FEF001FFD13 /* XCRemoteSwiftPackageReference "SnapKit" */;

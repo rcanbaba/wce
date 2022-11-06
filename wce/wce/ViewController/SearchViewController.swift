@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Lottie
 
 class SearchViewController: UIViewController {
     
@@ -44,6 +45,14 @@ class SearchViewController: UIViewController {
         return collectionView
     }()
     
+    private lazy var searchBarAnimationView: LottieAnimationView = {
+        let view = LottieAnimationView()
+        view.animation = LottieAnimation.named("asearching-radius")
+        view.loopMode = .loop
+        view.clipsToBounds = false
+        return view
+    }()
+    
     init(viewModel: SearchCompanyViewModel){
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -60,6 +69,7 @@ class SearchViewController: UIViewController {
         searchCompanies()
         bindViewModel()
         view.backgroundColor = UIColor.white
+        searchBarAnimationView.play()
     }
 
     private func configureUI() {
@@ -69,6 +79,14 @@ class SearchViewController: UIViewController {
             make.leading.trailing.equalToSuperview().inset(16)
             make.top.equalToSuperview().inset(150)
             make.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
+        
+        view.addSubview(searchBarAnimationView)
+        searchBarAnimationView.snp.makeConstraints { (make) in
+           // make.top.equalToSuperview().inset(20)
+           make.center.equalToSuperview()
+//            make.leading.trailing.equalToSuperview().inset(25)
+//            make.height.equalTo(100)
         }
     }
     
@@ -82,6 +100,7 @@ class SearchViewController: UIViewController {
     
     private func searchCompanies(text: String? = nil) {
         viewModel.searchCompany(text: text)
+        searchBarAnimationView.play()
     }
     
     private func bindViewModel() {
